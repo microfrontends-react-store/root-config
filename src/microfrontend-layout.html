@@ -1,0 +1,48 @@
+<single-spa-router>
+    <nav class="topnav" id="single-spa-application:@meli-store/mf-header">
+        <!-- <application
+            name="@meli-store/mf-header"
+            loader="microfrontLoader"
+            error="microfrontError"></application> -->
+    </nav>
+    <main>
+        <route
+            path="/"
+            exact>
+            <application
+                name="@meli-store/mf-products"
+                loader="microfrontLoader"
+                error="microfrontError"></application>
+        </route>
+        <route
+            path="/producto/:productId"
+            exact>
+            <application
+                name="@meli-store/mf-products"
+                loader="microfrontLoader"
+                error="microfrontError"></application>
+        </route>
+        <route path="/carrito">
+            <application
+                name="@meli-store/mf-shopping-car"
+                loader="microfrontLoader"
+                error="microfrontError"></application>
+            <application
+                name="@meli-store/mf-history"
+                loader="microfrontLoader"
+                error="microfrontError"></application>
+        </route>
+        <route path="/login">
+            <application
+                name="@meli-store/mf-login"
+                loader="microfrontLoader"
+                error="microfrontError"></application>
+        </route>
+        <redirect
+            from="/products"
+            to="/"></redirect>
+        <route default>
+            <application name="@single-spa/welcome"></application>
+        </route>
+    </main>
+</single-spa-router>
